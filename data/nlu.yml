@@ -1,0 +1,236 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+   - hey
+   - hello
+   - hi
+   - hello there
+   - good morning
+   - good evening
+   - moin
+   - hey there
+   - let's go
+   - hey dude
+   - goodmorning
+   - goodevening
+   - good afternoon
+   - yo
+   - hello world
+   - hi there
+- intent: goodbye
+  examples: |
+   - cu
+   - good by
+   - cee you later
+   - good night
+   - bye
+   - goodbye
+   - have a nice day
+   - see you around
+   - bye bye
+   - see you later
+   - thanks  ,  goodbye
+- intent: affirm
+  examples: |
+   - yes
+   - y
+   - indeed
+   - of course
+   - that sounds good
+   - correct
+   - /affirm
+- intent: deny
+  examples: |
+   - no
+   - n
+   - never
+   - I don't think so
+   - don't like that
+   - no way
+   - not really
+- intent: mood_great
+  examples: |
+   - perfect
+   - great
+   - amazing
+   - feeling like a king
+   - wonderful
+   - I am feeling very good
+   - I am great
+   - I am amazing
+   - I am going to save the world
+   - super stoked
+   - extremely good
+   - so so perfect
+   - so good
+   - so perfect
+- intent: mood_unhappy
+  examples: |
+   - my day was horrible
+   - I am sad
+   - I don't feel very well
+   - I am disappointed
+   - super sad
+   - I'm so sad
+   - sad
+   - very sad
+   - unhappy
+   - not good
+   - not very good
+   - extremly sad
+   - so saad
+   - so sad
+- intent: stop
+  examples: |
+   - stop
+   - nevermind
+   - please stop
+   - i want to stop
+   - stop the form
+- intent: bot_challenge
+  examples: |
+   - are you a bot?
+   - are you a human?
+   - am I talking to a bot?
+   - am I talking to a human?
+- intent: buy_pizza
+  examples: |
+   - i'd like to buy a pizza
+   - i want a pizza
+   - can i buy a pizza
+   - I'm interested in a savory round flattened bread of Italian origin
+   - i want to buy a pizza
+- intent: inform
+  examples: |
+   - i'd like a [large](pizza_size) pizza
+   - i want to order a [xl](pizza_size) [hawai](pizza_type) pizza
+   - [medium](pizza_size) pizza
+   - [xl](pizza_size)
+   - [small](pizza_size)
+   - [s](pizza_size)
+   - [pepperoni](pizza_type)
+   - give me a [mozerella](pizza_type) pizza
+   - [hawaii](pizza_type) pizza
+   - [smol](pizza_size)
+   - [hawaii](pizza_type)
+   - i want a [large](pizza_size) pizza
+   - [mozzarella](pizza_type)
+   - [hawai](pizza_type)
+   - [veggie](pizza_type)
+   - [fungi](pizza_type)
+   - [vegggie](pizza_type)
+   - [large](pizza_size)
+- intent: add_resource
+  examples: |
+   - add two [int](data_type) [variables](resource_type) [jobno]{"entity":"variable_name" , "group":"int"}  ,  [levelno]{"entity":"variable_name" , "group":"int"} and 4 [double](data_type) [variables](resource_type) [basic]{"entity":"variable_name" , "group":"double"} , [perks]{"entity":"variable_name" , "group":"double"} , [gros]{"entity":"variable_name" , "group":"double"} , [taxAmont]{"entity":"variable_name" , "group":"double"}
+   - add [variables](resource_type) [jobno]{"entity":"variable_name" , "group":"int"} , [levelno]{"entity":"variable_name" , "group":"int"} of type [int](data_type) and  [basic]{"entity":"variable_name" , "group":"double"}  , [perks]{"entity":"variable_name" , "group":"double"}  , [gros]{"entity":"variable_name" , "group":"double"}  , [taxAmont]{"entity":"variable_name" , "group":"double"} of type [double](data_type)
+   - add three [int](data_type) [variables](resource_type) [a]{"entity":"variable_name" , "group":"int"}  , [b]{"entity":"variable_name" , "group":"int"}  , [c]{"entity":"variable_name" , "group":"int"} and 4 [double](data_type) [variables](resource_type) [d]{"entity":"variable_name" , "group":"double"}  , [x1]{"entity":"variable_name" , "group":"double"}  , [x2]{"entity":"variable_name" , "group":"double"}
+   - add [variables](resource_type) [a]{"entity":"variable_name" , "group":"int"} , [b]{"entity":"variable_name" , "group":"int"} , [c]{"entity":"variable_name" , "group":"int"} of type int and  [d]{"entity":"variable_name" , "group":"double"}  , [x1]{"entity":"variable_name" , "group":"double"}  , [x2]{"entity":"variable_name" , "group":"double"} of type [double](data_type)
+   - add [variables](resource_type) [a]{"entity":"variable_name" , "group":"int"} , [b]{"entity":"variable_name" , "group":"int"} , [c]{"entity":"variable_name" , "group":"int"} of type long int and  [d]{"entity":"variable_name" , "group":"double"}  , [x1]{"entity":"variable_name" , "group":"double"}  , [x2]{"entity":"variable_name" , "group":"double"} of type [double](data_type)
+   - add [variables](resource_type) [ch1]{"entity":"variable_name" , "group":"char"} , [b]{"entity":"variable_name" , "group":"char"} , [c]{"entity":"variable_name" , "group":"char"} of [char](data_type) type and  [d23]{"entity":"variable_name" , "group":"double"} [_x1]{"entity":"variable_name" , "group":"double"} ,  [x2s]{"entity":"variable_name" , "group":"double"} of type [double](data_type)
+   - add [variables](resource_type) [cf4]{"entity":"variable_name" , "group":"float"} , [jkl]{"entity":"variable_name" , "group":"float"} of [float](data_type) type
+   - add [variables](resource_type) [scf4]{"entity":"variable_name" , "group":"long long int"} ,  [sjkl]{"entity":"variable_name" , "group":"long long int"} of [long long int](data_type) type
+   - add [variables](resource_type) [ascf4]{"entity":"variable_name" , "group":"unsigned long long int"}  , [dsjkl]{"entity":"variable_name" , "group":"unsigned long long int"} of [unsigned long long int](data_type) type
+   - add [variables](resource_type) [qscf4]{"entity":"variable_name" , "group":"signed int"}  , [gsjkl]{"entity":"variable_name" , "group":"signed int"} of [signed int](data_type) type
+   - add [variables](resource_type) [zscf4]{"entity":"variable_name" , "group":"long long int"} ,  [wsjkl]{"entity":"variable_name" , "group":"long long int"} of [long long int](data_type) type
+   - add [variables](resource_type) [trgh68]{"entity":"variable_name" , "group":"long long int"} [tr56]{"entity":"variable_name" , "group":"long long int"} of [long long int](data_type) type
+   - add [variables](resource_type) [agt]{"entity":"variable_name" , "group":"long long int"}  , [klm]{"entity":"variable_name" , "group":"long long int"} of [long long int](data_type) type
+   - add [int](data_type) variables [as]{"entity":"variable_name" , "group":"int"} and [bs]{"entity":"variable_name" , "group":"int"}
+   - add [double](data_type) variables [cvf]{"entity":"variable_name" , "group":"double"} , [gh78]{"entity":"variable_name" , "group":"double"}
+   - add [double](data_type) variables [acv2f]{"entity":"variable_name" , "group":"double"} , [agh78]{"entity":"variable_name" , "group":"double"}
+   - add [double](data_type) variables [wc1vf]{"entity":"variable_name" , "group":"double"} , [gsh78]{"entity":"variable_name" , "group":"double"}
+   - add [double](data_type) variables [fcvf_]{"entity":"variable_name" , "group":"double"} , [cgh78]{"entity":"variable_name" , "group":"double"}
+   - add [int](data_type) variables [as]{"entity":"variable_name" , "group":"int"}  , [fbs]{"entity":"variable_name" , "group":"int"} and [bs]{"entity":"variable_name" , "group":"int"}
+   - add [variables](resource_type) [ttr67]{"entity":"variable_name" , "group":""} and [klo]{"entity":"variable_name" , "group":""}
+   - add [variables](resource_type) [qttr67]{"entity":"variable_name" , "group":""}  [dklo]{"entity":"variable_name" , "group":""}
+   - add [variables](resource_type) [gttr67]{"entity":"variable_name" , "group":""} and [jklo]{"entity":"variable_name" , "group":""}
+   - add [variables](resource_type) [a]{"entity":"variable_name" , "group":"int"} [b]{"entity":"variable_name" , "group":"int"} of int type [c]{"entity":"variable_name" , "group":"long int"} [d]{"entity":"variable_name" , "group":"long int"} of long int type [e]{"entity":"variable_name" , "group":"long long int"} [f]{"entity":"variable_name" , "group":"long long int"} of long long int type [g]{"entity":"variable_name" , "group":"double"} [h]{"entity":"variable_name" , "group":"double"} of double type
+   - add [variables](resource_type) [a]{"entity":"variable_name" , "group":"float"} [b]{"entity":"variable_name" , "group":"float"} of float type [c]{"entity":"variable_name" , "group":"long int"} [d]{"entity":"variable_name" , "group":"long int"} of long int type [e]{"entity":"variable_name" , "group":"unsigned long long int"} [f]{"entity":"variable_name" , "group":"unsigned long long int"} of unsigned long long int type [g]{"entity":"variable_name" , "group":"char"} [h]{"entity":"variable_name" , "group":"char"} of char type
+   - add [unsigned long long int](data_type) [variables](resource_type) [fg]{"entity":"variable_name" , "group":"unsigned long long int"},[hj]{"entity":"variable_name" , "group":"unsigned long long int"}
+   - [variables](resource_type)
+   - add [variable](resource_type)
+   - create [variables](resource_type)
+   - create [variable](resource_type)
+   - [variable](resource_type)
+   - [one dimensional array](resource_type)
+   - [two dimensional array](resource_type)
+   - [pointer](resource_type)
+   - [pointers](resource_type)
+   - [local](scope)
+   - [global](scope)
+   - [short](data_type)
+   - [unsigned short](data_type)
+   - [int](data_type)
+   - [unsigned int](data_type)
+   - [long int](data_type)
+   - [unsigned long int](data_type)
+   - [long long int](data_type)
+   - [unsigned long long int](data_type)
+   - [char](data_type)
+   - [unsigned char](data_type)
+   - [signed char](data_type)
+   - [float](data_type)
+   - [double](data_type)
+   - [long double](data_type)
+   - [jobno](variable_name)
+   - [levelno](variable_name)
+   - [a](variable_name)
+   - [b](variable_name)
+   - [_no](variable_name)
+   - [no_](variable_name)
+   - [no89](variable_name)
+   - [no_9](variable_name)
+   - [a1](variable_name)
+   - [b5](variable_name)
+   - [jobno](variable_name) [levelno](variable_name) 
+   - [jobno](variable_name), [levelno](variable_name)
+   - [a](variable_name),[b5](variable_name),[no](variable_name)
+   - [a23](variable_name),[vb5](variable_name),[k5no6](variable_name)
+   - [ha23](variable_name),[vtb5](variable_name)
+   - [no1](variable_name),[vb5](variable_name),[u5no6](variable_name)
+   - [no1](variable_name),[vb5](variable_name) and [u5no6](variable_name)
+   - [sha23](variable_name) and [vftb5](variable_name)
+   - add [one dimensional array](resource_type)
+   - add [one dimensional arrays](resource_type)
+   - add [one dimensional array](resource_type) of type [double](data_type)
+   - add [one dimensional array](resource_type) of type [int](data_type)
+   - add [one dimensional array](resource_type) of type [char](data_type)
+   - add [one dimensional array](resource_type) of type [long int](data_type)
+   - add [one dimensional array](resource_type) of type [long long int](data_type)
+   - add [one dimensional array](resource_type) of type [double](data_type) with name [nos](variable_name) and size [5](array_size)
+   - add [one dimensional array](resource_type) of type [int](data_type) with names [amounts](variable_name) [amountsght](variable_name) and size [2](array_size)
+   - add [two dimensional array](resource_type)
+   - add [two dimensional array](resource_type) of type [double](data_type) with name [nos](variable_name) and dimension1 [5](dimension1), dimension2 [3](dimension2)
+   - add [two dimensional array](resource_type) of type [int](data_type) with name [nos](variable_name) and dimension1 [2](dimension1), dimension2 [3](dimension2)
+   - add [two dimensional array](resource_type) of type [long int](data_type) with name [twoD](variable_name) and dimension1 [4](dimension1), dimension2 [5](dimension2)
+   - add [two dimensional array](resource_type) of type [int](data_type) with name [mon](variable_name) and dimension1 [5](dimension1) dimension2 [7](dimension2)
+   - add [pointer variables](resource_type) [a]{"entity":"variable_name" , "group":"int"},[b]{"entity":"variable_name" , "group":"int"} of [int](data_type) type
+   - add [pointer variables](resource_type) [p1]{"entity":"variable_name" , "group":"double"},[p2]{"entity":"variable_name" , "group":"double"} of [double](data_type) type
+   - add [pointer variables](resource_type)
+- regex: variable_name
+  examples: |
+   - ^[a-zA-Z_$][a-zA-Z_$0-9]*$
+- lookup: data_type
+  examples: |
+   - short
+   - unsigned short
+   - int
+   - unsigned int
+   - long int
+   - unsigned long int
+   - long long int
+   - unsigned long long int
+   - char
+   - unsigned char
+   - signed char
+   - float
+   - double
+   - long double
+- lookup: scope
+  examples: |
+   - global
+   - local
+ 
+ 
+

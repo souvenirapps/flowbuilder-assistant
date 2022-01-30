@@ -1,0 +1,243 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- add_resource
+- inform
+- buy_pizza
+- stop
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- request_pizza_form
+entities:
+- for_input
+- pizza_size
+- pizza_type
+- resource_type
+- scope
+- data_type
+- array_size
+- dimension1
+- dimension2
+- variable_name:
+    groups:
+    - short
+    - unsigned short
+    - int
+    - unsigned int
+    - long int
+    - unsigned long int
+    - long long int
+    - unsigned long long int
+    - float
+    - double
+    - long double
+    - char
+    - unsigned char
+    - signed char
+slots:
+  pizza_size:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: pizza_size
+  pizza_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: pizza_type
+  resource_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: resource_type
+  for_input:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: for_input
+  scope:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: scope
+  data_types:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: data_type
+  variable_names:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+  array_size:
+   type: text
+   mappings:
+   - type: from_entity
+     entity: array_size
+  dimension1:
+   type: text
+   mappings:
+   - type: from_entity
+     entity: dimension1
+  dimension2:
+   type: text
+   mappings:
+   - type: from_entity
+     entity: dimension2
+  short:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: short
+  unsigned short:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: unsigned short
+  int:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: int
+  unsigned int:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: unsigned int
+  long int:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: long int
+  unsigned long int:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: unsigned long int
+  long long int:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: long long int
+  unsigned long long int:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: unsigned long long int
+  float:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: float
+  double:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: double
+  long double:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: long double
+  char:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: char
+  unsigned char:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: unsigned char
+  signed char:
+   type: list
+   mappings:
+   - type: from_entity
+     entity: variable_name
+     group: signed char
+  
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_submit:
+  - text: I will now order a pizza for you!
+  utter_pizza_slots:
+  - text: I will order a {pizza_size} {pizza_type} pizza.
+  utter_ask_continue:
+  - text: Are you sure you want to stop the form?
+  utter_ask_pizza_size:
+  - text: What size would you like your pizza to be?
+  utter_ask_pizza_type:
+  - text: What kind of pizza would you like to buy?
+  utter_ask_resource_type:
+  - text: What type of resource would you like to add?
+  utter_ask_data_types:
+  - text: What type of variables would you like to create?
+  utter_ask_variable_names:
+  - text: What are the variable names?
+  utter_ask_array_size:
+  - text: What is array size?
+  utter_ask_dimension1:
+  - text: What is dimension1 value?
+  utter_ask_dimension2:
+  - text: What is dimension2 value?
+  utter_submit_resource_form:
+  - text: I will now add  {resource_type}.{int}, {double}
+actions:
+- utter_ask_continue
+- utter_goodbye
+- utter_greet
+- utter_pizza_slots
+- utter_submit
+- validate_simple_pizza_form
+- validate_resource_form
+- utter_submit_resource_form
+- action_add_resources
+forms:
+  simple_pizza_form:
+    required_slots:
+    - pizza_size
+    - pizza_type
+  resource_form:
+    required_slots:
+    - resource_type
+    
+    

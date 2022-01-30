@@ -1,0 +1,36 @@
+marker_start_end_pizza_form:
+  seq:
+    - intent: buy_pizza
+    - action: utter_submit
+
+marker_pizza_size_not_set_immediately:
+  seq:
+    - intent: buy_pizza
+    - not:
+      - slot_was_set: pizza_size
+    - slot_was_set: pizza_size
+
+marker_pizza_type_not_set_immediately:
+  seq:
+    - intent: buy_pizza
+    - not:
+      - slot_was_set: pizza_type
+    - slot_was_set: pizza_type
+marker_resource_type_not_set_immediately:
+  seq:
+    - intent: add_resource
+    - not:
+      - slot_was_set: resource_type
+    - slot_was_set: resource_type
+marker_data_type_not_set_immediately:
+  seq:
+    - intent: add_resource
+    - not:
+      - slot_was_set: data_type
+    - slot_was_set: data_type
+marker_variable_name_not_set_immediately:
+  seq:
+    - intent: add_resource
+    - not:
+      - slot_was_set: variable_name
+    - slot_was_set: variable_name

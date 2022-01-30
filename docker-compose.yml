@@ -1,0 +1,17 @@
+version: '3.0'
+services:
+  rasa:
+    image: rasa/rasa:3.0.6-full
+    ports:
+      - 5005:5005
+    volumes:
+      - ./:/app
+    command:
+      - run
+      - --enable-api
+      - --cors
+      - "*"
+  app:
+    image: souvenirapps/fa-action-server:1.0
+    expose: 
+      - "5055"

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "variable_name",
+    "pattern": "^[a-zA-Z_$][a-zA-Z_$0-9]*$"
+  },
+  {
+    "name": "data_type",
+    "pattern": "(\\bshort\\b|\\bunsigned\\ short\\b|\\bint\\b|\\bunsigned\\ int\\b|\\blong\\ int\\b|\\bunsigned\\ long\\ int\\b|\\blong\\ long\\ int\\b|\\bunsigned\\ long\\ long\\ int\\b|\\bchar\\b|\\bunsigned\\ char\\b|\\bsigned\\ char\\b|\\bfloat\\b|\\bdouble\\b|\\blong\\ double\\b)"
+  },
+  {
+    "name": "scope",
+    "pattern": "(\\bglobal\\b|\\blocal\\b)"
+  }
+]
